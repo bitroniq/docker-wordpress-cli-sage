@@ -44,4 +44,10 @@ For WP-CLI to interact with a WordPress install, it needs access;
   - and access to the database
 
 The easiest way to accomplish that wp-config.php does not require changes is to simply join the networking context of the existing and presumably working WordPress container.
+
 There are many other ways to accomplish that, for example using docker-compose.yml.
+
+# SAGE Theme installation
+
+Please visit the official SAGE repository: https://github.com/roots/sage#theme-installation
+
