@@ -10,6 +10,8 @@
 FROM wordpress:cli
 
 # Change user to root for the following commands
+# - wordpress-cli is using USER www-data, so we need to overwrite this
+# - make sure to ssh as `www-data` or `su - www-data` if you use docker interactive shell
 USER root
 
 # Install SSH
