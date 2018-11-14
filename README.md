@@ -1,6 +1,7 @@
 # docker-wordpress-cli-sage
 
 > Docker image with [wp-cli](https://wp-cli.org/), [Sage](https://roots.io/sage/) development environment (npm, nodejs, composer, yarn, webpack) and **ssh** service.
+
 > The image is based on the official [wordpress-cli:lastest](https://hub.docker.com/r/library/wordpress/).
 
 # Usage
