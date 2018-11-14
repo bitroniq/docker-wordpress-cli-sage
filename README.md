@@ -8,6 +8,7 @@
 
 This image variant does not contain WordPress itself, but instead contains WP-CLI.
 
+## Interactive run
 The simplest way to use it with an existing WordPress container would be something similar to the following:
 
 ```shell
@@ -17,7 +18,7 @@ $ docker run -it --rm \
     bitroniq/docker-wordpress-cli-sage /bin/bash
 ```
 
-Or to start in the background and use the SSH
+## Start in the background and use the SSH
 
 ```
 $ docker run -d -p 2222:22 --name wordpress-cli-sage \
@@ -29,6 +30,13 @@ $ docker run -d -p 2222:22 --name wordpress-cli-sage \
 Then you can SSH to the container with password: `password`:
 ```
 $ ssh -p 2222 www-data@localhost
+```
+
+## Interactive access to the running container
+
+Instead of SSH you can access directly
+```
+$ docker exec -it wordpress-cli-sage /bin/bash
 ```
 
 For WP-CLI to interact with a WordPress install, it needs access;
