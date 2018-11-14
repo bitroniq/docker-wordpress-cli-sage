@@ -2,7 +2,7 @@
 
 > Docker image with [wp-cli](https://wp-cli.org/), [Sage](https://roots.io/sage/) development environment (npm, nodejs, composer, yarn, webpack) and **ssh** service.
 
-> The image is based on the official [wordpress-cli:lastest](https://hub.docker.com/r/library/wordpress/).
+> The image is based on the official [wordpress-cli:latest](https://hub.docker.com/r/library/wordpress/).
 
 # Usage
 
@@ -15,6 +15,20 @@ $ docker run -it --rm \
     --volumes-from some-wordpress \
     --network container:some-wordpress \
     bitroniq/docker-wordpress-cli-sage /bin/bash
+```
+
+Or to start in the background and use the SSH
+
+```
+$ docker run -d -p 2222:22 --name wordpress-cli-sage \
+    --volumes-from some-wordpress \
+    --network container:some-wordpress \
+    bitroniq/docker-wordpress-cli-sage
+```
+
+Then you can SSH to the container with password: `password`:
+```
+$ ssh -p 2222 www-data@localhost
 ```
 
 For WP-CLI to interact with a WordPress install, it needs access;
