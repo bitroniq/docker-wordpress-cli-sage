@@ -51,3 +51,32 @@ There are many other ways to accomplish that, for example using docker-compose.y
 
 Please visit the official SAGE repository: https://github.com/roots/sage#theme-installation
 
+
+#To Do List:
+* [x] Usa official wordpress-cli image as a base for SAGE
+  - allows to attach to exisitng stack with official wordpress
+* [x] Add SSHD to the wp-cli image:
+  - https://github.com/danielguerra69/alpine-sshd
+* [x] Make sure www-data user is used to match www-data (33:33) on the official `wordpress:latest` image
+* [x] passwd
+* [x] make sure it is possible to SSH and SFTP
+* [x] make sure it is possible to SFTP
+* [x] install npm, composer, yarn, webpack
+* [x] Verify all commands
+  - `composer create-project roots/sage`
+  - `yarn start` ... Compile assets when file changes are made, start Browsersync session
+  - `yarn build` ... Compile and optimize the files in your assets directory
+  - `yarn build:production` ... Compile assets for production
+
+```
+bash-4.4# yarn build:production
+ DONE  Compiled successfully in 19526ms
+
+                         Asset       Size  Chunks             Chunk Names
+      scripts/main_172175dd.js    73.1 kB       0  [emitted]  main
+scripts/customizer_172175dd.js  746 bytes       1  [emitted]  customizer
+      styles/main_172175dd.css     191 kB       0  [emitted]  main
+                   assets.json  161 bytes          [emitted]
+Done in 24.08s.
+```
+
