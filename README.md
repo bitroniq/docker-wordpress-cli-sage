@@ -1,5 +1,8 @@
 # docker-wordpress-cli-sage
 
+[![](https://images.microbadger.com/badges/image/bitroniq/docker-wordpress-cli-sage.svg)](https://microbadger.com/images/bitroniq/docker-wordpress-cli-sage "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/bitroniq/docker-wordpress-cli-sage.svg)](https://microbadger.com/images/bitroniq/docker-wordpress-cli-sage "Get your own version badge on microbadger.com")
+
 > Docker image with [wp-cli](https://wp-cli.org/), [Sage](https://roots.io/sage/) development environment (npm, nodejs, composer, yarn, webpack) and **ssh** service.
 
 > The image is based on the official [wordpress-cli:latest](https://hub.docker.com/r/library/wordpress/).
