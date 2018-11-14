@@ -4,6 +4,8 @@
 
 > The image is based on the official [wordpress-cli:latest](https://hub.docker.com/r/library/wordpress/).
 
+> The basic idea of this image is to attach to existing wordpress stack based on official [wordpress:latest](https://hub.docker.com/r/library/wordpress/) image.
+
 # Usage
 
 This image variant does not contain WordPress itself, but instead contains WP-CLI.
