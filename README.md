@@ -52,7 +52,7 @@ There are many other ways to accomplish that, for example using docker-compose.y
 Please visit the official SAGE repository: https://github.com/roots/sage#theme-installation
 
 
-#To Do List:
+# To Do List:
 * [x] Usa official wordpress-cli image as a base for SAGE
   - allows to attach to exisitng stack with official wordpress
 * [x] Add SSHD to the wp-cli image:
