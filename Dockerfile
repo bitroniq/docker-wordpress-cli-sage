@@ -9,6 +9,20 @@
 
 FROM wordpress:cli
 
+# Use environment variables to set the password
+# ARG password=password - set default value.
+# It will overwritten when provide ARG during the build process:
+# $ docker build --build-arg password=a_value
+ARG password=password
+
+# ARG password - expects a value
+# Will fail if not provide any
+#ARG password
+
+# set default value from ARG
+# You can echo the variable inside your cointainer
+ENV password=${password}
+
 # Change user to root for the following commands
 # - wordpress-cli is using USER www-data, so we need to overwrite this
 # - make sure to ssh as `www-data` or `su - www-data` if you use docker interactive shell
