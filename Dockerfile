@@ -1,6 +1,10 @@
 # Dockerfile
 # https://github.com/bitroniq/docker-wordpress-cli-sage
 # https://hub.docker.com/r/bitroniq/docker-wordpress-cli-sage/
+
+# Official wordpress-cli image on steroids with SAGE (roots.io) dev
+# environment and SSH access
+
 # Author: mail@piotrkowalski.info
 
 FROM wordpress:cli
@@ -28,6 +32,20 @@ RUN \
     groupadd -g 33 www-data && \
     useradd -d /var/www/html -s /bin/ash -g www-data -G www-data -u 33 www-data && \
     echo "www-data:password" | chpasswd
+
+# Install SAGE requirements
+# https://github.com/roots/sage#requirements
+# https://roots.io/guides/automate-sage-9-deployment-with-deploybot/
+RUN \
+    apk add npm  && \
+    apk add nodejs && \
+    apk add composer && \
+    apk add zip && \
+    apk add unzip
+RUN \
+    npm install --global npm@latest && \
+    npm install --global yarn && \
+    npm install --global webpack
 
 EXPOSE 22
 CMD ["/usr/sbin/sshd","-D"]
