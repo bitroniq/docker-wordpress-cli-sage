@@ -42,12 +42,14 @@ RUN \
 
 # Fix www-data uid mismatch in wordpress:latest
 # https://github.com/docker-library/wordpress/issues/256
-RUN \
-    userdel -r www-data && \
-    userdel -r xfs && \
-    groupadd -g 33 www-data && \
-    useradd -d /var/www/html -s /bin/ash -g www-data -G www-data -u 33 www-data && \
-    echo "www-data:password" | chpasswd
+# INFO: Issue has been fixed on 2019-03-10
+# RUN \
+#     userdel -r www-data && \
+#     userdel -r xfs && \
+#     groupadd -g 33 www-data && \
+#     useradd -d /var/www/html -s /bin/ash -g www-data -G www-data -u 33 www-data && \
+#     echo "www-data:password" | chpasswd
+
 
 # Install SAGE requirements
 # https://github.com/roots/sage#requirements
